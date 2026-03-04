@@ -15,11 +15,20 @@ public class ElectricCar extends Vehicle {
     public void drive(int distance) {
         // TODO: Call super.drive() 
         // TODO: Calculate battery loss
-        super.drive(distance);
-        batteryPercent-=(distance/5);
+        if(super.getStatus()){
+            super.drive(distance);
+
+            if(batteryPercent-(distance/5.0)>=0)
+                batteryPercent-=(distance/5.0);
+
+            else batteryPercent=0;
+        }
+    }
+    public double getCharge(){
+        return batteryPercent;
     }
 
     public void charge() {
-        batteryPercent = 100.0;
+            batteryPercent = 100.0;
     }
 }

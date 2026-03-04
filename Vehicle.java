@@ -18,6 +18,10 @@ public class Vehicle {
         engineRunning=true;
     }
 
+    public boolean getStatus(){
+        return engineRunning;
+    }
+
     /**
      * Increases mileage if the engine is running.
      */
@@ -28,7 +32,8 @@ public class Vehicle {
     }
 
     public String toString() {
-        // TODO: Return model, mileage, and status
-        return "Model:: " + model + "\nMileage:: "+ mileage +"\nStatus:: "+engineRunning;
+        // TODO: Return model, mileage, and status'
+        return "Model:: " + model + ", Mileage:: "+ mileage +", Status:: "+engineRunning;
+    
     }
 }
